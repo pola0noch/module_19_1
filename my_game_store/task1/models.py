@@ -4,8 +4,9 @@ from django.db import models
 
 class Buyer(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    balance = models.DecimalField(max_digits=10, decimal_places=2)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
     age = models.PositiveIntegerField()
+    password = models.CharField(max_length=15, default='default_password')
 
     def __str__(self):
         return self.name
